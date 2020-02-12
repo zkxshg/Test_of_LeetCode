@@ -1,3 +1,4 @@
+//if ((findN(index, head)->val)!=(findN(count - index - 1, head)->val)) pali = false; 
 /**
  * Definition for singly-linked list.
  * struct ListNode {
