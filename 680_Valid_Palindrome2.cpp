@@ -1,3 +1,4 @@
+// case 1 : Del left; case 2 : Del right.
 class Solution {
 public:
     bool validPalindrome(string s) {
