@@ -1,3 +1,6 @@
+# Recursive for link list:
+# if (n1->val <= n2->val){ if (mergeLk(n1->next, n2) == 2) n1->next = n2; return 1; }
+# else { if (mergeLk(n1, n2->next) == 1) n2->next = n1; return 2; }
 /**
  * Definition for singly-linked list.
  * struct ListNode {
