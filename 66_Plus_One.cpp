@@ -3,13 +3,10 @@ class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
         int lend = digits.size();
-        
         vector<int> result = {0};
         result.insert(result.end(),digits.begin(),digits.end());
         int len = lend + 1;
-        
         result[len - 1] = result[len - 1] + 1;
-        
         for (int i = 1; i < lend + 1; i++){
             if (result[len - i] <= 9) break;
             else {
@@ -21,7 +18,6 @@ public:
             vector<int> tr(result.begin()+1, result.end());
             result = tr;
         }
-        return result; 
-        
+        return result;  
     }
 };
