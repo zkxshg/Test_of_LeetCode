@@ -1,3 +1,4 @@
+// pow(x, n) =  exp(n*log(x))
 #include <cmath>
 class Solution {
 public:
