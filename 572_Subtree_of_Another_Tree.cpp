@@ -1,4 +1,4 @@
-// DFS: if same node -> if same tree
+// two-step DFS: if same node -> if same tree
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
