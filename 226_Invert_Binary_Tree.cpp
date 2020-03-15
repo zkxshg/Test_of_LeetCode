@@ -1,4 +1,4 @@
-// swap recursively
+// swap iteratively
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
