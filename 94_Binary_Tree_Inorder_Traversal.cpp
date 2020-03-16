@@ -1,4 +1,5 @@
 // same to 145. Binary Tree Postorder Traversal
+// Inorder: left->root->right
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
