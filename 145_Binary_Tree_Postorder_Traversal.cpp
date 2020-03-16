@@ -1,4 +1,5 @@
 // Similar to 590. N-ary Tree Postorder Traversal
+// Postorder: left->right->root
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
