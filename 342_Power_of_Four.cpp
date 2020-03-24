@@ -1,4 +1,4 @@
-// log2(num) % 2 == 0 && num = exp(2, log2(num))
+// log2(num) % 2 == 0 && num = pow(2, log2(num))
 class Solution {
 public:
     bool isPowerOfFour(int num) {
