@@ -5,4 +5,5 @@
 * 278:  Binary search
 * 28:   KMP string match
 * 371:  bit calculation
+* 41:   Array inclusive sort
 * 977:  Quick sort
