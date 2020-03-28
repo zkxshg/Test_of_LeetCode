@@ -1,3 +1,22 @@
+// Use dict(256, -1)
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int len = s.size();
+        if (len == 0) return 0;
+        if (len == 1) return 1;
+        
+        vector<int> dict(256, -1);
+        int maxLen = 0, start = -1;
+        for (int i = 0; i != s.length(); i++) {
+            if (dict[s[i]] > start) start = dict[s[i]];
+            dict[s[i]] = i;
+            maxLen = max(maxLen, i - start);
+        }
+        return maxLen;
+    }
+};
+
 // brute-force DP
 class Solution {
 public:
