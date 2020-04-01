@@ -1,6 +1,7 @@
 # Test_of_LeetCode
 * 110:  Balanced Binary Tree
-* 17:   vector<string>().swap(next);
+* 17:   vector<string>().swap(next)
+* 191:  uint32_t -> bitset<32> -> string
 * 206:  Reverse Linked List
 * 22:   Binary tree Search
 * 278:  Binary search
