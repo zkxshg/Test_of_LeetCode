@@ -7,6 +7,7 @@
 * 278:  Binary search
 * 28:   KMP string match
 * 3:    Longest Substring Without Repeating Characters
+* 338:  bitset<sizeof(i)*8>(i).count() 
 * 371:  bit calculation
 * 41:   Array inclusive sort
 * 977:  Quick sort
