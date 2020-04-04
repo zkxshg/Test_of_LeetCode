@@ -1,3 +1,29 @@
+// int bef = sumArr(end-1, num, maxp);
+// if (bef + res > res) res = bef + res;
+// if (*maxp < res) *maxp = res;
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int len = nums.size();
+        if(len == 1) return nums[0];
+        int max = INT_MIN;
+        int result = sumArr(len-1, nums, &max);
+        return max;
+    }
+    int sumArr(int end, vector<int>& num, int * maxp){
+        if (end == 0) {
+            if (*maxp < num[0]) *maxp = num[0];
+            return num[0];
+        }
+        int res = num[end];
+        int bef = sumArr(end-1, num, maxp);
+        if (bef + res > res) res = bef + res;
+        if (*maxp < res) *maxp = res;
+        return res;
+    }
+    
+};
+
 // brute-force
 class Solution {
 public:
