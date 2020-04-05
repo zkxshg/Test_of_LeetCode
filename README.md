@@ -12,3 +12,5 @@
 * 371:  bit calculation
 * 41:   Array inclusive sort
 * 977:  Quick sort
+  
+* 32-Longest Valid Parentheses
