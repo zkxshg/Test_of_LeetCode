@@ -12,6 +12,7 @@
 * 371:  bit calculation
 * 41:   Array inclusive sort
 * 438:  Find All Anagrams in a String
+* 77:   Combinations 
 * 977:  Quick sort
   
 * 32-Longest Valid Parentheses
