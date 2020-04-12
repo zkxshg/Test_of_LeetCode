@@ -7,6 +7,7 @@
 * 206:  Reverse Linked List
 * 28:   KMP string match
 * 3:    Longest Substring Without Repeating Characters
+* 303:  unordered_map<int, int> sumDict
 * 31:   Next Permutation
 * 34:   Binary search
 * 338:  bitset<sizeof(i)*8>(i).count() 
