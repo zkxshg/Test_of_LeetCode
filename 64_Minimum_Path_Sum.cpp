@@ -23,3 +23,42 @@ public:
         return gridPath[x][y];
     }
 };
+
+// DP2
+class Solution {
+public:
+    int minPathSum(vector<vector<int>>& grid) {
+        int len = grid.size();
+        if (len == 0) return 0;
+        int wid = grid[0].size();     
+        if (wid == 0) return 0;
+        
+        vector<vector<int>> minSum(len, vector<int>(wid, -1));
+        
+        int result = minPath(grid, minSum, len - 1, wid - 1);
+        return result;
+    }
+    
+    int minPath(vector<vector<int>>& grid, vector<vector<int>>& minSum, int x, int y) {
+        if (x == 0 && y == 0) return grid[0][0];
+        else if (x == 0) {
+            if (minSum[0][y - 1] < 0) minSum[0][y - 1] = minPath(grid, minSum, 0, y - 1);
+            return minSum[0][y - 1] + grid[x][y];
+        }
+        else if (y == 0) {
+            if (minSum[x - 1][0] < 0) minSum[x - 1][0] = minPath(grid, minSum, x - 1, 0);
+            return minSum[x - 1][0] + grid[x][y];
+        }
+        
+        if (minSum[x][y - 1] < 0) minSum[x][y - 1] = minPath(grid, minSum, x, y - 1);
+        int leftMin = minSum[x][y - 1];
+        
+        if (minSum[x - 1][y] < 0) minSum[x - 1][y] = minPath(grid, minSum, x - 1, y);
+        int upMin = minSum[x - 1][y];
+        
+        if (leftMin < upMin) minSum[x][y] = leftMin + grid[x][y];
+        else minSum[x][y] = upMin + grid[x][y];
+        
+        return minSum[x][y];
+    }
+};
