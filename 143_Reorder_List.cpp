@@ -1,3 +1,28 @@
+// Recursion
+class Solution {
+public:
+    ListNode * temp;
+    bool done = false;
+    void reorderList(ListNode* head) {
+        if (head && head->next) {
+            temp = head;
+            goTail(temp);
+        }
+    }
+    void goTail(ListNode* head) {
+        if (head->next) goTail(head->next);
+        if (head != temp && head != temp->next && !done) {
+            head->next= temp->next;
+            temp->next = head;
+            temp = head->next;
+        }
+        else if (!done){
+            head->next = NULL;
+            done = true;
+        }
+    }
+};
+
 // Can be reduced to O(n) based on recursion
 class Solution {
 public:
