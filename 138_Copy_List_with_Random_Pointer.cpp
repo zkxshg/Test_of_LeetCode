@@ -3,8 +3,7 @@ class Solution {
 public:
     Node* copyRandomList(Node* head) {
         if (!head) return head;
-        
-        
+   
         Node * nex = head, * ori, * result;
         
         while (nex) {
@@ -19,6 +18,7 @@ public:
             if (nex->random) nex->next->random = nex->random->next;
             nex = nex->next->next;
         }
+        
         nex = head->next;
         ori = head;
         result = nex;
