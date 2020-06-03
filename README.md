@@ -19,7 +19,7 @@
 * 450:  Delete Node in a BST
 * 560:  continuous subarrays sum
 * 77:   Combinations 
-* 977:  Quick sort
+* 1356:  Quick sort
 
 
 * 22:   Binary tree Search
