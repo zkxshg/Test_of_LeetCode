@@ -1,6 +1,7 @@
 # Test_of_LeetCode
 * 110:  Balanced Binary Tree
 * 120:  staightforward search
+* 148:  get mid of linked list
 * 15:   3Sum
 * 17:   vector<string>().swap(next)
 * 190:  uint32_t -> bitset<32> -> string -> bitset<32> -> uint32_t
