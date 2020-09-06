@@ -1,3 +1,4 @@
+// 5508_Number_of_Ways_Where_Square_of_Number_Is_Equal_to_Product_of_Two_Numbers.cpp
 // hash table + int overflow
 class Solution {
 public:
