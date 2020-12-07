@@ -1,21 +1,20 @@
 // sort
 class Solution {
 public:
-    vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
-        int len = points.size();
-        
+    vector<int> topKFrequent(vector<int>& nums, int k) {
         vector<pair<int, int> > distA;
         
-        for (int i = 0; i < len; i++) distA.push_back(make_pair(eucDis(points[i]), i));
+        unordered_map<int , int> couDict;
+        
+        for (int i : nums) couDict[i]++;
+        
+        for (auto& v : couDict) distA.push_back(make_pair(v.second, v.first));
         
         sort(distA.begin(), distA.end());
         
-        vector<vector<int>> res;
-        for (int i = 0; i < K; i++) res.push_back(points[distA[i].second]);
+        int len = distA.size();
+        vector<int> res;
+        for (int i = 1; i <= k; i++) res.push_back(distA[len - i].second);
         return res;
-    }
-    
-    int eucDis(vector<int>& a) {
-        return pow(a[0], 2) + pow(a[1], 2);
     }
 };
