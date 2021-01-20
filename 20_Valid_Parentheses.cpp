@@ -1,3 +1,31 @@
+// stack
+class Solution {
+public:
+    bool isValid(string s) {
+        int len = s.size();
+        
+        vector<int> st;
+        for (char ch : s) {
+            if (st.empty()) st.push_back(ch);
+            else if (which(st.back()) >0 && which(st.back()) + which(ch) == 0) st.pop_back();
+            else st.push_back(ch);
+        }
+        
+        if (st.empty()) return true;
+        return false;
+    }
+    int which(char ch){
+        int order = 0;
+        if (ch == '(') order = 1;
+        else if (ch == '{') order = 2;
+        else if (ch == '[') order = 3;
+        else if (ch == ')') order = -1;
+        else if (ch == '}') order = -2;
+        else if (ch == ']') order = -3;
+        return order;
+    }
+};
+
 // string stacks = s; int top = 1; if ((w2+w1) == 0) top -= 1; else top += 1; if (top == 0) return true;
 class Solution {
 public:
