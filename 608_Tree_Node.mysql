@@ -1,0 +1,27 @@
+# https://leetcode.com/problems/tree-node/
+# LEFT JOIN + NULL
+
+# Write your MySQL query statement below
+SELECT DISTINCT id, IF(p_id IS NULL, 
+             'Root',
+              IF (c_id IS NULL,
+                 'Leaf',
+                  'Inner'
+                 )
+             ) AS type
+FROM (
+    SELECT t1.id AS id, t1.p_id AS p_id, t2.id AS c_id
+    FROM Tree AS t1
+    LEFT JOIN Tree AS t2
+    ON t1.id = t2.p_id
+) AS t3
+
+/*
+Create table If Not Exists Tree (id int, p_id int)
+Truncate table Tree
+insert into Tree (id, p_id) values ('1', 'None')
+insert into Tree (id, p_id) values ('2', '1')
+insert into Tree (id, p_id) values ('3', '1')
+insert into Tree (id, p_id) values ('4', '2')
+insert into Tree (id, p_id) values ('5', '2')
+*/

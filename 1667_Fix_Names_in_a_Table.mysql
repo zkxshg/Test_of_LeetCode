@@ -1,0 +1,14 @@
+# https://leetcode.com/problems/fix-names-in-a-table/submissions/
+# CONCAT + UCASE/LCASE + SUBSTRING() + LENGTH()
+
+# Write your MySQL query statement below
+SELECT user_id, CONCAT(UCASE(LEFT(name,1)), LCASE(substring(name, 2, length(name)- 1))) AS name
+FROM Users
+ORDER BY user_id
+
+/*
+Create table If Not Exists Users (user_id int, name varchar(40))
+Truncate table Users
+insert into Users (user_id, name) values ('1', 'aLice')
+insert into Users (user_id, name) values ('2', 'bOB')
+*/

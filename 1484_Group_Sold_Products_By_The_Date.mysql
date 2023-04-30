@@ -1,0 +1,20 @@
+# https://leetcode.com/problems/group-sold-products-by-the-date/
+# GROUP CONCAT
+
+# Write your MySQL query statement below
+SELECT sell_date, 
+  COUNT(DISTINCT product) AS num_sold, 
+  GROUP_CONCAT(DISTINCT product ORDER BY product) AS products
+FROM Activities
+GROUP BY sell_date
+ORDER BY sell_date
+
+/*
+Create table If Not Exists Patients (patient_id int, patient_name varchar(30), conditions varchar(100))
+Truncate table Patients
+insert into Patients (patient_id, patient_name, conditions) values ('1', 'Daniel', 'YFEV COUGH')
+insert into Patients (patient_id, patient_name, conditions) values ('2', 'Alice', '')
+insert into Patients (patient_id, patient_name, conditions) values ('3', 'Bob', 'DIAB100 MYOP')
+insert into Patients (patient_id, patient_name, conditions) values ('4', 'George', 'ACNE DIAB100')
+insert into Patients (patient_id, patient_name, conditions) values ('5', 'Alain', 'DIAB201')
+*/

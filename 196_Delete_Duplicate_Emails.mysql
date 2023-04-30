@@ -1,0 +1,22 @@
+# https://leetcode.com/problems/delete-duplicate-emails/
+# JOIN
+
+# Please write a DELETE statement and DO NOT write a SELECT statement.
+# Write your MySQL query statement below
+DELETE FROM Person
+WHERE id IN (
+    SELECT pid FROM (
+        SELECT p1.id AS pid
+        FROM Person AS p1
+        INNER JOIN Person AS p2
+        ON p1.email=p2.email AND p1.id > p2.id
+    ) AS pd
+)
+
+/*
+Create table If Not Exists Person (Id int, Email varchar(255))
+Truncate table Person
+insert into Person (id, email) values ('1', 'john@example.com')
+insert into Person (id, email) values ('2', 'bob@example.com')
+insert into Person (id, email) values ('3', 'john@example.com')
+*/

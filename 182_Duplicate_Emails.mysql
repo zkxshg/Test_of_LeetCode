@@ -1,0 +1,16 @@
+# https://leetcode.com/problems/duplicate-emails/
+# SELECT DISTINCT
+
+# Write your MySQL query statement below
+SELECT DISTINCT P1.email
+From Person AS p1, Person AS p2
+WHERE p1.email=p2.email AND p1.id<>p2.id
+
+/*
+# Write your MySQL query statement below
+Create table If Not Exists Person (id int, email varchar(255))
+Truncate table Person
+insert into Person (id, email) values ('1', 'a@b.com')
+insert into Person (id, email) values ('2', 'c@d.com')
+insert into Person (id, email) values ('3', 'a@b.com')
+*/

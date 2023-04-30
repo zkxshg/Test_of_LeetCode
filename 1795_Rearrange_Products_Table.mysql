@@ -1,0 +1,20 @@
+# https://leetcode.com/problems/rearrange-products-table/
+# UNION
+
+# Write your MySQL query statement below
+SELECT product_id, store, store1 AS price
+FROM (
+    SELECT product_id, store1, 'store1' AS store FROM Products
+    UNION 
+    SELECT product_id, store2, 'store2' AS store FROM Products
+    UNION 
+    SELECT product_id, store3, 'store3' AS store FROM Products
+) AS P2
+WHERE store1 IS NOT NULL
+
+/*
+Create table If Not Exists Products (product_id int, store1 int, store2 int, store3 int)
+Truncate table Products
+insert into Products (product_id, store1, store2, store3) values ('0', '95', '100', '105')
+insert into Products (product_id, store1, store2, store3) values ('1', '70', 'None', '80')
+*/

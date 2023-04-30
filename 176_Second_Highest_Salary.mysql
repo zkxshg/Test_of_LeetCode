@@ -1,0 +1,19 @@
+# https://leetcode.com/problems/second-highest-salary/
+# SELECT TOP + DISTINCT + IF
+
+# Write your MySQL query statement below
+SELECT IF(COUNT(E2.salary) > 1, MIN(salary), NULL) AS SecondHighestSalary
+FROM (
+    SELECT DISTINCT salary 
+    FROM Employee 
+    ORDER BY salary DESC
+    LIMIT 2
+) AS E2
+
+/*
+Create table If Not Exists Employee (id int, salary int)
+Truncate table Employee
+insert into Employee (id, salary) values ('1', '100')
+insert into Employee (id, salary) values ('2', '200')
+insert into Employee (id, salary) values ('3', '300')
+*/

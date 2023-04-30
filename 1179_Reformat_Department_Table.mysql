@@ -1,0 +1,29 @@
+# https://leetcode.com/problems/reformat-department-table/
+# GROUP BY + IF
+
+# Write your MySQL query statement below
+SELECT id,
+    max(if(month = 'Jan', revenue, NULL)) AS 'Jan_Revenue',
+    max(if(month = 'Feb', revenue, NULL)) AS 'Feb_Revenue',
+    max(if(month = 'Mar', revenue, NULL)) AS 'Mar_Revenue',
+    max(if(month = 'Apr', revenue, NULL)) AS 'Apr_Revenue',
+    max(if(month = 'May', revenue, NULL)) AS 'May_Revenue',
+    max(if(month = 'Jun', revenue, NULL)) AS 'Jun_Revenue',
+    max(if(month = 'Jul', revenue, NULL)) AS 'Jul_Revenue',
+    max(if(month = 'Aug', revenue, NULL)) AS 'Aug_Revenue',
+    max(if(month = 'Sep', revenue, NULL)) AS 'Sep_Revenue',
+    max(if(month = 'Oct', revenue, NULL)) AS 'Oct_Revenue',
+    max(if(month = 'Nov', revenue, NULL)) AS 'Nov_Revenue',
+    max(if(month = 'Dec', revenue, NULL)) AS 'Dec_Revenue'
+FROM Department
+GROUP BY id 
+
+/*
+Create table If Not Exists Department (id int, revenue int, month varchar(5))
+Truncate table Department
+insert into Department (id, revenue, month) values ('1', '8000', 'Jan')
+insert into Department (id, revenue, month) values ('2', '9000', 'Jan')
+insert into Department (id, revenue, month) values ('3', '10000', 'Feb')
+insert into Department (id, revenue, month) values ('1', '7000', 'Feb')
+insert into Department (id, revenue, month) values ('1', '6000', 'Mar')
+*/

@@ -1,0 +1,23 @@
+# https://leetcode.com/problems/exchange-seats/
+# LEAD()
+
+# Write your MySQL query statement below
+SELECT IF(mod(id,2)=0,
+         prev_id, 
+         IFNULL(nex_id, id)
+         ) AS 'id',
+         student
+FROM (
+    SELECT 
+        id, 
+        student, 
+        LEAD(id, 1) OVER(
+            ORDER BY id
+        ) nex_id,
+        LEAD(id, 1) OVER(
+            ORDER BY id DESC
+        ) prev_id
+    FROM
+        Seat
+) AS S2
+ORDER BY id;

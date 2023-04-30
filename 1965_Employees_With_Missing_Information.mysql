@@ -1,0 +1,29 @@
+# https://leetcode.com/problems/employees-with-missing-information/
+# JOIN + UNION (FULL OUTER JOIN)
+
+# Write your MySQL query statement below
+SELECT IF(id1 IS NULL, id2, id1) AS employee_id
+FROM (
+    SELECT Employees.employee_id AS id1, name, Salaries.employee_id AS id2, salary from Employees 
+        LEFT JOIN Salaries 
+        ON Employees.employee_id=Salaries.employee_id 
+    UNION
+    SELECT Employees.employee_id AS id1, name, Salaries.employee_id AS id2, salary from Employees 
+        RIGHT JOIN Salaries 
+        ON Employees.employee_id=Salaries.employee_id 
+) AS U1
+WHERE name IS NULL OR salary IS NULL
+ORDER BY employee_id
+
+/*
+Create table If Not Exists Employees (employee_id int, name varchar(30))
+Create table If Not Exists Salaries (employee_id int, salary int)
+Truncate table Employees
+insert into Employees (employee_id, name) values ('2', 'Crew')
+insert into Employees (employee_id, name) values ('4', 'Haven')
+insert into Employees (employee_id, name) values ('5', 'Kristian')
+Truncate table Salaries
+insert into Salaries (employee_id, salary) values ('5', '76071')
+insert into Salaries (employee_id, salary) values ('1', '22517')
+insert into Salaries (employee_id, salary) values ('4', '63539')
+*/
