@@ -1,4 +1,39 @@
 // https://leetcode.com/problems/stone-game-iii/description/
+// 1-D DP
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+class Solution {
+public:
+    string stoneGameIII(vector<int>& stoneValue) {
+        int n = stoneValue.size();
+        
+        // Resize stoneValue vector and initialize dp
+        stoneValue.resize(n + 4);
+        vector<int> dp(n + 4, INT_MIN / 2);
+        for (int i = n; i < n + 4; ++i) dp[i] = 0;
+        
+        // Calculate the sum of the stoneValue
+        vector<int> pre(n + 5);
+        for (int i = 0; i < n + 4; i++) pre[i + 1] = pre[i] + stoneValue[i];
+        
+        // Bottom-up 1D DP
+        for (int i = n - 1; i >= 0; --i) { 
+            for (int k = 1; k <= 3; ++k) {
+                int stones = pre[i + k] - pre[i];
+                dp[i] = max(dp[i], stones - dp[i + k]);
+            }
+        }
+        
+        if (dp[0] > 0) return "Alice";
+        if (dp[0] < 0) return "Bob";
+        return "Tie";
+    }
+};
+
 // DP + map
 
 class Solution {
