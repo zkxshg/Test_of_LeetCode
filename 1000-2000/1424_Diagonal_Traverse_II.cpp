@@ -20,3 +20,25 @@ public:
         return result;     
     }
 };
+
+// sorting
+class Solution {
+public:
+    vector<int> findDiagonalOrder(vector<vector<int>>& nums) {
+        vector<tuple<int, int, int>> arr;
+        for (int i = 0; i < nums.size(); ++i) {
+            for (int j = 0; j < nums[i].size(); ++j) {
+                arr.push_back({i + j, -i, nums[i][j]});
+            }
+        }
+
+        sort(arr.begin(), arr.end());
+
+        vector<int> result;
+        for (const auto& [d, r, val] : arr) {
+            result.push_back(val);
+        }
+
+        return result;
+    }
+};
