@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/?envType=daily-question&envId=2024-07-20
-// Math + Greedy
+// Math + Greedy (3h)
 
 class Solution {
 public:
