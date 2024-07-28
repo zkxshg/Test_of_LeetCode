@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/second-minimum-time-to-reach-destination/?envType=daily-question&envId=2024-07-28
-// Graph + Dijkstra + Math
+// Graph + Dijkstra + Math （2h）
 
 class Solution {
 public:
