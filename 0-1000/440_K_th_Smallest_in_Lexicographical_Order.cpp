@@ -1,6 +1,43 @@
 // https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/
 // Math + Trie
+class Solution {
+public:
 
+    int dist(long a, long b, long &n) {
+        int posDist = 0;
+
+        while (a <= n) {
+            posDist += min(n + 1, b) - a;
+
+            a *= 10;
+            b *= 10;
+        }
+
+        return posDist;
+    }
+
+
+    int findKthNumber(long n, int k) {
+        long num = 1, pos = 1;
+
+        while (pos < k) {
+            int posDist = dist(num, num + 1, n);
+
+            if (pos + posDist <= k) {
+                num++;
+                pos += posDist;
+            }
+            else {
+                num *= 10;
+                pos++;
+            }
+        } 
+
+        return num;
+    }
+};
+
+// Version 0
 class Solution {
 public:
 
