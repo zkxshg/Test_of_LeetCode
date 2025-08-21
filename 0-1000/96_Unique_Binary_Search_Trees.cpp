@@ -1,4 +1,4 @@
-// numTrees(n) = sum \limit_{i in [1,n]} {numTrees(i-1) * numTrees(n-i)}
+// numTrees(n) = sum \limit_{i in [1,n]} {numTrees(i-1) * numTrees(n-i)} 
 class Solution {
 public:
     int numTrees(int n) {
