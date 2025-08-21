@@ -1,5 +1,7 @@
-// https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/?envType=daily-question&envId=2024-09-01
-// Bit Manipulation
+// 2419. Longest Subarray With Maximum Bitwise AND
+// Link: https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/
+// Lang: C++
+// Date: 2025-08-21 20:53:07.721 UTC
 
 class Solution {
 public:
